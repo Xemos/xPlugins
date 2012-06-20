@@ -108,19 +108,7 @@ private class MemberPrompt extends ValidatingPrompt
         {
             if(split.length == 2)
             {
-                arg0.getForWhom().sendRawMessage(((Player)arg0.getForWhom()).getName() + ", use this reponse to see you current account's balance.");
-                return this;
-            }
-            else
-            {
-              //TODO getBalance();
-            }
-        }
-        if(split[0].equalsIgnoreCase("leave"))
-        {
-            if(split.length == 2)
-            {
-                arg0.getForWhom().sendRawMessage(((Player)arg0.getForWhom()).getName() + ", use this response only if you want to leave this bank.");
+                arg0.getForWhom().sendRawMessage(((Player)arg0.getForWhom()).getName() + ", to see your accounts balance simply tell me 'balance'.");
                 return this;
             }
             else
@@ -128,11 +116,24 @@ private class MemberPrompt extends ValidatingPrompt
                
             }
         }
+        if(split[0].equalsIgnoreCase("leave"))
+        {
+            if(split.length == 2)
+            {
+                arg0.getForWhom().sendRawMessage(((Player)arg0.getForWhom()).getName() + ", if you want to leave us, just say 'leave'.");
+                return this;
+            }
+            else
+            {
+               
+            }
+        }
+      
         else if(split[0].equalsIgnoreCase("withdraw"))
         {
             if(split.length == 2)
             {
-                arg0.getForWhom().sendRawMessage(((Player)arg0.getForWhom()).getName() + ", use this response to withdraw money from your account.");
+                arg0.getForWhom().sendRawMessage(((Player)arg0.getForWhom()).getName() + ", to withdraw money from your account, tell me 'withdraw'.");
                 return this;
             }
             else
@@ -144,7 +145,7 @@ private class MemberPrompt extends ValidatingPrompt
         {
             if(split.length == 2)
             {
-                arg0.getForWhom().sendRawMessage(((Player)arg0.getForWhom()).getName() + ", use this response to deposit money into your account.");
+                arg0.getForWhom().sendRawMessage(((Player)arg0.getForWhom()).getName() + ", to deposit money into your account, say 'deposit'.");
                 return this;
             }
             else
@@ -152,11 +153,11 @@ private class MemberPrompt extends ValidatingPrompt
              //   new 
             }
         }
-        else
-        {
-            // Do quit
-        }
-        
+            else
+            {
+            	arg0.getForWhom().sendRawMessage("Goodbye");
+            }
+   
         arg0.getForWhom().sendRawMessage(((Player)arg0.getForWhom()).getName() + ", I'm not sure I understand you.");
         return this;
     }
