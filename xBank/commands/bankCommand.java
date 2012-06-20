@@ -2,7 +2,7 @@ package xBank.commands;
 
 import java.util.List;
 import xBank.Core;
-import xBank.conversations.Teller;
+//import xBank.conversations.Teller;  TODO
 
 import org.bukkit.ChatColor;
 import org.bukkit.World;
@@ -28,7 +28,7 @@ public class bankCommand implements CommandExecutor {
 
 	public bankCommand(Core core) {
 		this.plugin = core;
-		this.factory = new ConversationFactory(this);
+		//this.factory = new ConversationFactory(this); TODO
 	}
 	
 	
@@ -62,14 +62,14 @@ public class bankCommand implements CommandExecutor {
 		}
 		
 		String CB = config.getString("Location." + currentBankRegion(player));
-		boolean member = true;
+	//	boolean member = true; TODO
 		
 		switch (args[0].toLowerCase()) {
 		case "teller":
-			if(CB != getBankAccount(player)){
-				member = false;
-			}
-			this.factory.withFirstPrompt(new Teller(player.getName(), getBankAccount(player),  member)).buildConversation(player).begin();
+		//	if(CB != getBankAccount(player)){
+		//		member = false;
+		//	}
+		//	this.factory.withFirstPrompt(new Teller(player.getName(), getBankAccount(player),  member)).buildConversation(player).begin();
 			return true;
 		case "test":			
 			listMembers(player,CB);
