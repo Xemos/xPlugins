@@ -1,0 +1,14 @@
+name: xBank
+main: xBank.Core
+version: 2.0
+authors: [Xemos,firetire100]
+commands:
+  bank:
+    description: Old bank command
+    usage: /hbank <command>
+  bankcp:
+    description: Old bank command
+    usage: /hbank <command>
+  hbank:
+    description: Old bank command
+    usage: /hbank <command>

@@ -1,0 +1,339 @@
+package xBank.commands;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
+
+import ru.tehkode.permissions.PermissionManager;
+import ru.tehkode.permissions.bukkit.PermissionsEx;
+
+import xBank.Core;
+
+import com.iConomy.system.Holdings;
+
+public class BankAdmin implements CommandExecutor {
+	ChatColor ec = ChatColor.RED;
+	ChatColor m1c = ChatColor.YELLOW;
+	ChatColor m2c = ChatColor.GOLD;
+	ChatColor m3c = ChatColor.WHITE;
+	private FileConfiguration config = null;
+	private Core plugin;
+
+	public BankAdmin(Core core) {
+		this.plugin = core;
+	}
+
+	/*
+	  	•/bankcp level [new level]
+		•/bankcp update //forces update of stat trackers
+		•/bankcp delete [bank] //removes bank and refunds players
+		•/bankcp rank [new rank]
+		•/bankcp limit [new limit]
+		•/bankcp total [bank name] //total CN in bank, if blank, total in all banks
+		•Confirmation prompt if new rank or level is less than old
+	 */
+	
+	public boolean onCommand(CommandSender sender, Command cmd, String label,
+			String[] args) {
+
+		this.config = plugin.getConfig();
+
+		if (Bukkit.getServer().getPluginManager()
+				.isPluginEnabled("PermissionsEx")) {
+			PermissionManager pex = PermissionsEx.getPermissionManager();
+
+			Player player = (Player) sender;
+
+			if (pex.has(player, "bank.admin")) {
+				switch (args[0]) {
+
+				case "level":
+				case "update":{ 
+					doUpdate();
+					return true;}
+				case "delete":{ 
+					doDelete(args[1]);
+					return true;
+				}
+				case "rank":
+				case "limit":
+				case "total":
+				default:
+					return true;
+
+				}
+
+			}
+
+		}
+		return true;
+	}
+	
+	@SuppressWarnings("static-access")
+	private void doDelete(String ID) {
+		// TODO Delete command
+		List<String> mems = config.getStringList("Banks." + ID);
+		
+		double monies = 0;
+		
+		Holdings bankAcc = null;
+		Holdings playerAcc = null;
+		
+		
+		for(String stripper : mems){
+			bankAcc = getAccount(getBankAccount(stripper));
+			playerAcc = getAccount(stripper);
+			monies = bankAcc.balance();
+			playerAcc.add(monies);
+			plugin.iConomy.Accounts.removeCompletely(getBankAccount(stripper));
+			config.set("Players." + stripper, null);
+		}
+		
+		config.set("Banks." + ID, null);
+		plugin.saveConfig();
+		
+	}
+	
+	@SuppressWarnings("static-access")
+	public Holdings getAccount(String account) {
+		
+		Holdings balance = plugin.iConomy.getAccount(account).getHoldings();
+		return balance;
+	}
+	
+	private String getBankAccount(String account) {
+		String accountname = config.getString("Players." + account
+				+ ".Account");
+		return accountname;
+	}
+
+	private void doUpdate(Player player) {
+		// TODO Update counter command
+		List<String> banks = config.getStringList("Banks.List");
+		List<String> mems = null;
+		double total = 0;
+		double bankTotal = 0;
+		Holdings current = null;
+		
+		
+		for(int x = 0; x < banks.size(); x++){
+			mems = config.getStringList("Banks." + banks.get(x) + ".Members");
+			bankTotal = 0;
+			for(int y = 0; y < mems.size(); y++){
+				current = getAccount(getBankAccount(mems.get(y)));
+				total += current.balance();					
+			}
+			config.set("Banks." + banks.get(x) + ".Total", bankTotal);
+			mems = null;
+		}
+		config.set("Banks.Total",total);
+		
+		player.sendMessage("The bank totals have been recalculated.");
+		
+	}
+
+	private boolean update(Player player){
+		
+		List<String> banks = config.getStringList("Banks.List.");
+		List<String> accHolders = null;
+		List<String> total = Arrays.asList("");
+		String member = "";
+		String ID = "";
+		double sum =0;
+		
+		
+		
+		for (int x = 0; x < banks.size(); x++){
+			ID = banks.get(x);
+			accHolders = config.getStringList("Banks." + ID + ".Members");
+			for (int y = 0; y < accHolders.size(); y++){
+				member = accHolders.get(y);
+				sum = sum + (getHoldings(ID + "-" + member));
+			}
+			total.set(x, ID + ": " + sum);
+			sum = 0;
+			accHolders = null;
+		}
+		
+		
+		return true;
+	}
+/*
+	private boolean update(String ID, Player player){
+		Holdings sum = getHoldings(ID + "-" + player.getName());
+			
+		return true;
+	}
+	*/
+	
+	//Gets info on bank accounts
+	@SuppressWarnings("static-access")
+	private double getHoldings(String name) {
+		Holdings balance = plugin.iConomy.getAccount(name).getHoldings();
+		return balance.balance();
+	}
+
+	// same method as above with a string input instead of a player
+	private boolean isInBank(String owner) {
+		if (config.contains("Players." + owner)) {
+			if (!(config.getString("Players." + owner + ".Bank") == null)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	private double getInterest(int level) {
+		switch(level){
+			case 1: return .06;
+			case 2: return .12;
+			case 3: return .18;
+			case 4: return .24;
+			case 5: return .30;
+			case 6: return .36;
+			case 7: return .42;
+			case 8: return .48;
+			case 9: return .54;
+			case 10:return .60;
+			default: return 0;
+		}
+	}
+
+	private double getFee(int level) {
+		switch(level){
+			case 1: return 50.00;
+			case 2: return 100.00;
+			case 3: return 150.00;
+			case 4: return 200.00;
+			case 5: return 250.00;
+			case 6: return 300.00;
+			case 7: return 350.00;
+			case 8: return 400.00;
+			case 9: return 450.00;
+			case 10:return 500.00;
+			default: return 0;
+		}
+	}
+
+	// Method to add banks to the list of banks in the config...bad code i know,
+	// it is redundant
+	private void addToBankList(String iD) {
+		List<String> banks = config.getStringList("Banks.List");
+		banks.add(iD);
+		config.set("Banks.List", banks);
+		plugin.saveConfig();
+
+	}
+
+	// check to see if the specified bank exists
+	private boolean bankExists(String ID) {
+		if (config.contains("Banks." + ID)) {
+			return true;
+		}
+		return false;
+	}
+
+	private void setLevel(String ID, int level, Player player) {
+		config.set("Banks." + ID + ".Fee", getFee(level));
+		config.set("Banks." + ID + ".JoinFee", getFee(level));
+		config.set("Banks." + ID + ".Interest", getInterest(level));
+		plugin.saveConfig();
+		player.sendMessage(ChatColor.YELLOW + "Bank Level changed to " + level);
+	}
+
+	// makes a new bank
+	@SuppressWarnings("static-access")
+	private void newBank(String ID, String name, String owner, String region) {
+		addToBankList(ID);
+		String ownerName = plugin.getServer().getOfflinePlayer(owner).getName();
+		int level = 1;
+
+		config.set("Banks." + ID + ".Fee", getFee(level));
+		config.set("Banks." + ID + ".Region", region);
+		config.set("Banks." + ID + ".JoinFee", getFee(level));
+
+		if (isInBank(ownerName)) {
+			String ID1 = config.getString("Players." + ownerName + ".Bank");
+			List<String> members = config.getStringList("Banks." + ID1
+					+ ".Members");
+			members.remove(ownerName);
+			config.set("Banks." + ID1 + ".Members", members);
+			config.set("Players." + ownerName + ".Bank", null);
+			String accountname = config.getString("Players." + ownerName
+					+ ".Account");
+			if (!plugin.iConomy.Accounts.exists(accountname)) {
+				Holdings oldact = plugin.iConomy.getAccount(accountname)
+						.getHoldings();
+				double bal = oldact.balance();
+				Holdings useract = plugin.iConomy.getAccount(ownerName)
+						.getHoldings();
+				useract.add(bal);
+				plugin.iConomy.Accounts.remove(accountname);
+			}
+			config.set("Players." + ownerName + ".Account", null);
+			List<String> memberaccounts = config.getStringList("Banks." + ID1
+					+ ".MemberAccounts");
+			memberaccounts.remove(accountname);
+			config.set("Banks." + ID1 + ".MemberAccounts", memberaccounts);
+		}
+
+		String own = ID + "-" + ownerName;
+		List<String> ownerlst = new ArrayList<String>();
+		List<String> owneract = new ArrayList<String>();
+		ownerlst.add(ownerName);
+		owneract.add(own);
+		config.set("Banks." + ID + ".Members", ownerlst);
+		config.set("Banks." + ID + ".MemberAccounts", owneract);
+		config.set("Banks." + ID + ".OwnerAccount", own);
+		config.set("Banks." + ID + ".Name", name);
+		config.set("Banks." + ID + ".Interest", getInterest(level));
+		config.set("Banks." + ID + ".Owner", ownerName);
+
+		plugin.saveConfig();
+
+	}
+
+	/*
+	 * 
+	 * } else if(args[0].equalsIgnoreCase(
+	 * 
+	 * 
+	 * } else if((args[0].equalsIgnoreCase("create"))&&(pex.has(player,
+	 * "hbank.admin"))){
+	 * 
+	 * if(args.length == 5){ String ID = args[1]; String Name = args[2]; String
+	 * Owner = args[3]; String Region = args[4];
+	 * 
+	 * 
+	 * if(!bankExists(ID)){
+	 * 
+	 * newBank(ID,Name,Owner, Region); } else{
+	 * player.sendMessage(ChatColor.YELLOW +
+	 * "Bank with that ID already exists"); } } else {
+	 * player.sendMessage(ChatColor.YELLOW +
+	 * "/bank create ID name owner regionName"); }
+	 * 
+	 * 
+	 * 
+	 * } else if((args[0] == "setLevel")&&(pex.has(player,
+	 * "hbank.admin"))){//This is broken!!! if(args.length == 3){ String ID =
+	 * args[1]; int Level = Integer.parseInt(args[2]);
+	 * 
+	 * setLevel(ID,Level,player);
+	 * 
+	 * return true; } else { player.sendMessage(ChatColor.YELLOW +
+	 * "/bank setlevel ID level"); }
+	 * 
+	 * } else { sendHelp(player); } } return true; }
+	 */
+
+}
