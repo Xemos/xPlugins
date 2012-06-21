@@ -66,10 +66,11 @@ public class bankCommand implements CommandExecutor {
 		
 		switch (args[0].toLowerCase()) {
 		case "teller":
-		//	if(CB != getBankAccount(player)){
-		//		member = false;
-		//	}
-		//	this.factory.withFirstPrompt(new Teller(player.getName(), getBankAccount(player),  member)).buildConversation(player).begin();
+			if(CB != getBankAccount(player))
+				member = false;
+
+			//Thats everything we need to do now:
+			new Teller(player.getName(), getBankAccount(player), member).start(player);
 			return true;
 		case "members":		
 
