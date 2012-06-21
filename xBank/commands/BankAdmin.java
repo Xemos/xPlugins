@@ -1,7 +1,5 @@
 package xBank.commands;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.bukkit.Bukkit;
@@ -56,16 +54,36 @@ public class BankAdmin implements CommandExecutor {
 				switch (args[0]) {
 
 				case "level":
+					
+
+player.sendMessage("Bad NEO!!  You no do this yet!");
+					return true;
 				case "update":{ 
-					doUpdate();
+					doUpdate(player);
 					return true;}
 				case "delete":{ 
 					doDelete(args[1]);
 					return true;
 				}
 				case "rank":
+					
+					player.sendMessage("Bad NEO!!  You no do this yet!");
+					return true;
 				case "limit":
+					
+					player.sendMessage("Bad NEO!!  You no do this yet!");
+					return true;
 				case "total":
+					if(args[1] != null){
+						if(bankExists(args[1])){
+							doTotal(player, args[1]);
+						}else{
+							player.sendMessage("Neo, " + args[1] + " Does not exist!");
+						}
+					}else{
+						doTotal(player);
+					}
+					return true;
 				default:
 					return true;
 
@@ -77,9 +95,18 @@ public class BankAdmin implements CommandExecutor {
 		return true;
 	}
 	
+	private void doTotal(Player player) {
+		
+		player.sendMessage("The total in all banks is " + config.getString("Banks.Total"));
+	}
+
+	private void doTotal(Player player, String ID) {
+		player.sendMessage("The total in " + ID + " is " + config.getString("Banks." + ID + ".Total"));
+		
+	}
+
 	@SuppressWarnings("static-access")
 	private void doDelete(String ID) {
-		// TODO Delete command
 		List<String> mems = config.getStringList("Banks." + ID);
 		
 		double monies = 0;
@@ -115,36 +142,13 @@ public class BankAdmin implements CommandExecutor {
 		return accountname;
 	}
 
-	private void doUpdate(Player player) {
-		// TODO Update counter command
-		List<String> banks = config.getStringList("Banks.List");
-		List<String> mems = null;
-		double total = 0;
-		double bankTotal = 0;
-		Holdings current = null;
-		
-		
-		for(int x = 0; x < banks.size(); x++){
-			mems = config.getStringList("Banks." + banks.get(x) + ".Members");
-			bankTotal = 0;
-			for(int y = 0; y < mems.size(); y++){
-				current = getAccount(getBankAccount(mems.get(y)));
-				total += current.balance();					
-			}
-			config.set("Banks." + banks.get(x) + ".Total", bankTotal);
-			mems = null;
-		}
-		config.set("Banks.Total",total);
-		
-		player.sendMessage("The bank totals have been recalculated.");
-		
-	}
 
-	private boolean update(Player player){
+
+	private boolean doUpdate(Player player){
 		
-		List<String> banks = config.getStringList("Banks.List.");
+		List<String> banks = config.getStringList("Banks.List");
 		List<String> accHolders = null;
-		List<String> total = Arrays.asList("");
+		double total = 0;
 		String member = "";
 		String ID = "";
 		double sum =0;
@@ -156,13 +160,16 @@ public class BankAdmin implements CommandExecutor {
 			accHolders = config.getStringList("Banks." + ID + ".Members");
 			for (int y = 0; y < accHolders.size(); y++){
 				member = accHolders.get(y);
-				sum = sum + (getHoldings(ID + "-" + member));
+				sum += (getHoldings(ID + "-" + member));
 			}
-			total.set(x, ID + ": " + sum);
+			config.set("Banks." + ID + ".Total", sum);
+			total += sum;
 			sum = 0;
 			accHolders = null;
 		}
-		
+		config.set("Banks.Total", total);
+		player.sendMessage("The bank totals have been recalculated.");
+		plugin.saveConfig();
 		
 		return true;
 	}
@@ -180,6 +187,16 @@ public class BankAdmin implements CommandExecutor {
 		Holdings balance = plugin.iConomy.getAccount(name).getHoldings();
 		return balance.balance();
 	}
+	
+	// check to see if the specified bank exists
+	private boolean bankExists(String ID) {
+		if (config.contains("Banks." + ID)) {
+			return true;
+		}
+		return false;
+	}
+	
+	/*
 
 	// same method as above with a string input instead of a player
 	private boolean isInBank(String owner) {
@@ -234,14 +251,9 @@ public class BankAdmin implements CommandExecutor {
 
 	}
 
-	// check to see if the specified bank exists
-	private boolean bankExists(String ID) {
-		if (config.contains("Banks." + ID)) {
-			return true;
-		}
-		return false;
-	}
 
+
+	
 	private void setLevel(String ID, int level, Player player) {
 		config.set("Banks." + ID + ".Fee", getFee(level));
 		config.set("Banks." + ID + ".JoinFee", getFee(level));
@@ -302,7 +314,7 @@ public class BankAdmin implements CommandExecutor {
 
 	}
 
-	/*
+	
 	 * 
 	 * } else if(args[0].equalsIgnoreCase(
 	 * 
