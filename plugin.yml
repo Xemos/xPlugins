@@ -1,13 +1,13 @@
 name: xBank
 main: xBank.Core
 version: 2.0
-authors: [Xemos,firetire100]
+authors: [Xemos,firetire]
 commands:
   bank:
-    description: Old bank command
+    description: Bank command
     usage: /hbank <command>
   bankcp:
-    description: Old bank command
+    description: Admin commands
     usage: /hbank <command>
   hbank:
     description: Old bank command
