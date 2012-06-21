@@ -15,42 +15,39 @@ import xBank.Core;
 
 ///testing github - eclipse sync
 
-public class Teller extends JavaPlugin implements CommandExecutor, ConversationAbandonedListener {
+//Note: we don't want to extend JavaPlugin since this isn't our main class
+public class Teller implements CommandExecutor, ConversationAbandonedListener {
 
 	private ConversationFactory conversationFactory;
 	private Core plugin;
 
-    public Teller(String pName, String bName, boolean mem) {
-        this.conversationFactory = new ConversationFactory(this)
+    public Teller(String pName, String bName, boolean mem, Core core) {
+    	this.plugin = core;
+    	//We use the main instance because the conversation factory needs the main plugin instance
+        this.conversationFactory = new ConversationFactory(core)
                 .withModality(true)
                 .withFirstPrompt(new FirstPrompt(pName,bName,mem))
                 .withEscapeSequence("quit")
                 .withTimeout(15)
                 .thatExcludesNonPlayersWithMessage("Go away evil console!")
-                .addConversationAbandonedListener(this);
+                .addConversationAbandonedListener(this)
+                .withFirstPrompt(new FirstPrompt(pName, bName, mem));
     }
     
-    
+    //We need a point where to start the conversation
+    public void start(Player pl)
+    {
+    	this.conversationFactory.buildConversation(pl).begin();
+    }
 
-    public Teller(Core core) {
-    	this.plugin = core;
-	}
-
-
-	public void ConversationAbandoned(ConversationAbandonedEvent abandonedEvent) {
-        if (abandonedEvent.gracefulExit()) {
+//We need this method, not the other one.
+@Override
+public void conversationAbandoned(ConversationAbandonedEvent arg0) {
+	if (abandonedEvent.gracefulExit()) {
             abandonedEvent.getContext().getForWhom().sendRawMessage("Conversation exited gracefully.");
         } else {
             abandonedEvent.getContext().getForWhom().sendRawMessage("Conversation abandoned by" + abandonedEvent.getCanceller().getClass().getName());
         }
-    }
-
-
-
-@Override
-public void conversationAbandoned(ConversationAbandonedEvent arg0) {
-	// TODO Auto-generated method stub
-	
 }
 
 
