@@ -71,8 +71,13 @@ public class bankCommand implements CommandExecutor {
 		//	}
 		//	this.factory.withFirstPrompt(new Teller(player.getName(), getBankAccount(player),  member)).buildConversation(player).begin();
 			return true;
-		case "test":			
-			listMembers(player,CB);
+		case "members":		
+
+			if (isInBank(player)){
+				listMembers(player,CB);
+			}else{
+				sendHelp(player);
+			}
 			return true;
 		case "list":
 			listBanks(player);
@@ -165,14 +170,7 @@ public class bankCommand implements CommandExecutor {
 			}
 			return true;
 		}
-		case "members": {
-			if (args.length == 2) {
-				listMembers(player, args[1]);
-			} else {
-				sendHelp(player);
-			}
-			return true;
-		}
+		
 		default:
 			sendHelp(player);
 			return true;
@@ -324,7 +322,7 @@ public class bankCommand implements CommandExecutor {
 	private boolean isInBankRegion(Player player, String ID) {
 		String regID = config.getString("Banks." + ID + ".Region");
 
-		World world = plugin.getServer().getWorld("Flatgrass");
+		World world = plugin.getServer().getWorld("world");
 		List<String> regs = plugin.wg.getRegionManager(world)
 				.getApplicableRegionsIDs(
 						new Vector(player.getLocation().getX(), player
@@ -340,7 +338,7 @@ public class bankCommand implements CommandExecutor {
 	}
 	
 	private String currentBankRegion(Player player) {
-		World world = plugin.getServer().getWorld("Flatgrass");
+		World world = plugin.getServer().getWorld("world");
 
 		List<String> banks = config.getStringList("Region");
 		List<String> regs = plugin.wg.getRegionManager(world)
