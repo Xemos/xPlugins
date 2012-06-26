@@ -1,0 +1,1612 @@
+Region:
+- ccbank
+- bou-bank
+- cc_lot_34
+- cic-bank
+- nsl-bank
+- cc_lot_15
+- cc_lot_38
+- cc_lot_42
+- cc_lot_36
+- ti_lot_59
+- cc_lot_47
+- cc_lot_21
+- fi_lot_8
+- cc_lot_32
+Location:
+  ccbank: CCB 
+  bou-bank: BOU
+  cc_lot_34: JSL
+  cic-bank: CIC
+  nsl-bank: NSL
+  cc_lot_15: TCU
+  cc_lot_38: BOA
+  cc_lot_42: QFB
+  cc_lot_36: S7
+  ti_lot_59: JEB
+  cc_lot_47: ION
+  cc_lot_21: BTV
+  fi_lot_8: BOF
+  cc_lot_32: TBU
+Banks:
+  List:
+  - CCB
+  - BOU
+  - JSL
+  - CIC
+  - NSL
+  - TCU
+  - BOA
+  - QFB
+  - S7
+  - JEB
+  - ION
+  - BTV
+  - BOF
+  - TBU
+  CCB:
+    Fee: 50.0
+    Region: ccbank
+    JoinFee: 50.0
+    Members:
+    - neokyle21
+    - datboy0401
+    - wonderllama4554
+    - Seerahili
+    - MPRO_TITI
+    - snakebug
+    - iTz_Tek
+    - VISKASE900
+    - horse00
+    - jacob811
+    - hahafunny12
+    - samyboy101
+    - brods89
+    - darkzune
+    - masterman626
+    - caelan1503
+    - Cat_PurrsBOOM
+    - pokepearl
+    MemberAccounts:
+    - CCB-neokyle21
+    - CCB-datboy0401
+    - CCB-wonderllama4554
+    - CCB-Seerahili
+    - CCB-MPRO_TITI
+    - CCB-snakebug
+    - CCB-iTz_Tek
+    - CCB-VISKASE900
+    - CCB-horse00
+    - CCB-jacob811
+    - CCB-hahafunny12
+    - CCB-samyboy101
+    - CCB-brods89
+    - CCB-darkzune
+    - CCB-masterman626
+    - CCB-caelan1503
+    - CCB-Cat_PurrsBOOM
+    - CCB-pokepearl
+    OwnerAccount: CCB-neokyle21
+    Name: Creation City Bank
+    Interest: 0.06
+    Owner: neokyle21
+  BOU:
+    Fee: 500.0
+    Region: bou-bank
+    JoinFee: 500.0
+    Members:
+    - evanf94
+    - somewhatsam
+    - Krado
+    - greeno96
+    - MisterBuster
+    - murnerr
+    - zackymc
+    - BurningVortex182
+    - neokyle21
+    - Awolfers
+    - OutbreakGaming
+    - pretzelguy1
+    - asablic
+    - plophead32
+    - colebennington
+    - zGLostBoy
+    MemberAccounts:
+    - BOU-evanf94
+    - BOU-somewhatsam
+    - BOU-Krado
+    - BOU-greeno96
+    - BOU-MisterBuster
+    - BOU-murnerr
+    - BOU-zackymc
+    - BOU-BurningVortex182
+    - BOU-neokyle21
+    - BOU-Awolfers
+    - BOU-OutbreakGaming
+    - BOU-pretzelguy1
+    - BOU-asablic
+    - BOU-plophead32
+    - BOU-colebennington
+    - BOU-zGLostBoy
+    OwnerAccount: BOU-evanf94
+    Name: Bank Of Utopia
+    Interest: 0.6
+    Owner: evanf94
+  JSL:
+    Fee: 500.0
+    Region: cc_lot_34
+    JoinFee: 500.0
+    Members:
+    - jagawatz
+    - tcb4
+    - Empirarte
+    - Ethanscool101
+    - Thaddeus12
+    - TheNakedBor
+    - _Lilah_
+    - doubletfan5
+    - atmfan5
+    - Xrent
+    - minijasper1
+    - Reiu1
+    - zeclar999
+    - beastanator
+    - BurlyAssassin
+    - 123firebird4
+    - shutupurmom
+    - andurilkeuk
+    - bloodscape38
+    - lordnaylor
+    - tylerrip11
+    - pigman21
+    - _CaptainCake
+    - Heliplx
+    - ghosttr
+    - nakedzombies69n
+    - tdawgthegangster
+    - swazeyyy
+    - thewolfsniper
+    - loofty
+    - mistyblade
+    - MankyMitch
+    - MattCrinos
+    - CentralGuard
+    - thackyt
+    - megajasper123
+    - luigiman12
+    - pittman789
+    - templar24
+    - facebaak
+    - jx631
+    - mythcaptor
+    - jrlop99
+    - cedward93
+    - Astrogod07
+    - clubguy
+    - titonicshark123
+    - jthe111
+    - Crotan
+    - BlairBros
+    - twilightking
+    - Jaypro1997
+    - iCondawgs
+    - iKayyJayy
+    - matmat99
+    - FreakyCupcake
+    - Swift_Chillz
+    - MINER86
+    - Golden4
+    - VolatileOstrich
+    - Encoded2
+    - CobbleAddict
+    - WCxACEofCLUBS
+    - SneakyMiner4life
+    - istalku
+    - Zinkopus
+    - zekeman615
+    - TreePuncher2140
+    - huntlol10
+    - n3hellfire
+    - vjunkie
+    - unbracedbeast
+    - CptnCrafter
+    - SuperJewNinja
+    - naryz
+    - Camden2001
+    - TotalMiner112
+    - ExProGunner
+    - Massam10
+    - campipe
+    - Yuzacc
+    - Cebekazu
+    - borkefer
+    - Deatux17
+    - matilda8147
+    - NeonPegasus
+    - ironpenguin
+    - SmellyPenguin
+    - XBLKU5H
+    - IHNF
+    - Whoosh21
+    - Typical_Tim
+    MemberAccounts:
+    - JSL-jagawatz
+    - JSL-tcb4
+    - JSL-Empirarte
+    - JSL-Ethanscool101
+    - JSL-Thaddeus12
+    - JSL-TheNakedBor
+    - JSL-_Lilah_
+    - JSL-doubletfan5
+    - JSL-atmfan5
+    - JSL-Xrent
+    - JSL-minijasper1
+    - JSL-Reiu1
+    - JSL-zeclar999
+    - JSL-beastanator
+    - JSL-BurlyAssassin
+    - JSL-123firebird4
+    - JSL-shutupurmom
+    - JSL-andurilkeuk
+    - JSL-bloodscape38
+    - JSL-lordnaylor
+    - JSL-tylerrip11
+    - JSL-pigman21
+    - JSL-_CaptainCake
+    - JSL-Heliplx
+    - JSL-ghosttr
+    - JSL-nakedzombies69n
+    - JSL-tdawgthegangster
+    - JSL-swazeyyy
+    - JSL-thewolfsniper
+    - JSL-loofty
+    - JSL-mistyblade
+    - JSL-MankyMitch
+    - JSL-MattCrinos
+    - JSL-CentralGuard
+    - JSL-thackyt
+    - JSL-megajasper123
+    - JSL-luigiman12
+    - JSL-pittman789
+    - JSL-templar24
+    - JSL-facebaak
+    - JSL-jx631
+    - JSL-mythcaptor
+    - JSL-jrlop99
+    - JSL-cedward93
+    - JSL-Astrogod07
+    - JSL-clubguy
+    - JSL-titonicshark123
+    - JSL-jthe111
+    - JSL-Crotan
+    - JSL-BlairBros
+    - JSL-twilightking
+    - JSL-Jaypro1997
+    - JSL-iCondawgs
+    - JSL-iKayyJayy
+    - JSL-matmat99
+    - JSL-FreakyCupcake
+    - JSL-Swift_Chillz
+    - JSL-MINER86
+    - JSL-Golden4
+    - JSL-VolatileOstrich
+    - JSL-Encoded2
+    - JSL-CobbleAddict
+    - JSL-WCxACEofCLUBS
+    - JSL-SneakyMiner4life
+    - JSL-istalku
+    - JSL-Zinkopus
+    - JSL-zekeman615
+    - JSL-TreePuncher2140
+    - JSL-huntlol10
+    - JSL-n3hellfire
+    - JSL-vjunkie
+    - JSL-unbracedbeast
+    - JSL-CptnCrafter
+    - JSL-SuperJewNinja
+    - JSL-naryz
+    - JSL-Camden2001
+    - JSL-TotalMiner112
+    - JSL-ExProGunner
+    - JSL-Massam10
+    - JSL-campipe
+    - JSL-Yuzacc
+    - JSL-Cebekazu
+    - JSL-borkefer
+    - JSL-Deatux17
+    - JSL-matilda8147
+    - JSL-NeonPegasus
+    - JSL-ironpenguin
+    - JSL-SmellyPenguin
+    - JSL-XBLKU5H
+    - JSL-IHNF
+    - JSL-Whoosh21
+    - JSL-Typical_Tim
+    OwnerAccount: JSL-jagawatz
+    Name: JagaCorp Savings and Loans
+    Interest: 0.6
+    Owner: jagawatz
+  CIC:
+    Fee: 500.0
+    Region: cic-bank
+    JoinFee: 500.0
+    Members:
+    - monkmasta
+    - Happy_G
+    MemberAccounts:
+    - CIC-monkmasta
+    - CIC-Happy_G
+    OwnerAccount: CIC-monkmasta
+    Name: Crab International CO.
+    Interest: 0.6
+    Owner: monkmasta
+  NSL:
+    Fee: 100.0
+    Region: nsl-bank
+    JoinFee: 100.0
+    Members:
+    - ragedice
+    - Zyba
+    - aaronbonez60
+    - bob_your_uncle
+    - Kosikowski_6
+    - kaleb59
+    - 12mik
+    - adyboo6195
+    - rexrapter1234
+    - OddLord23
+    - Ragedice
+    MemberAccounts:
+    - NSL-ragedice
+    - NSL-Zyba
+    - NSL-aaronbonez60
+    - NSL-bob_your_uncle
+    - NSL-Kosikowski_6
+    - NSL-kaleb59
+    - NSL-12mik
+    - NSL-adyboo6195
+    - NSL-rexrapter1234
+    - NSL-OddLord23
+    - NSL-Ragedice
+    OwnerAccount: NSL-ragedice
+    Name: Northwood Savings And Loan
+    Interest: 0.12
+    Owner: ragedice
+  TCU:
+    Fee: 500.0
+    Region: cc_lot_15
+    JoinFee: 500.0
+    Members:
+    - Island_Banker
+    - Xperialp
+    - Xemos
+    - BambooBill
+    - planetyonx
+    - Steeps7
+    - Steeps5
+    - firetire100
+    - Cool_Lama
+    - RicePlease
+    - Cosmin1215
+    - noobie05
+    - BlackNin
+    - Kosikowski6
+    - minecraft124_
+    - qwertyps
+    - staffo95
+    - littleme48
+    - Kevinbat
+    - KaleFaolan
+    - sgtsniffer
+    - TEXANNINJA
+    - ginie1
+    - c360
+    - Wednesdayy_z
+    - TheRedPigMan
+    MemberAccounts:
+    - TCU-Island_Banker
+    - TCU-Xperialp
+    - TCU-Xemos
+    - TCU-BambooBill
+    - TCU-planetyonx
+    - TCU-Steeps7
+    - TCU-Steeps5
+    - TCU-firetire100
+    - TCU-Cool_Lama
+    - TCU-RicePlease
+    - TCU-Cosmin1215
+    - TCU-noobie05
+    - TCU-BlackNin
+    - TCU-Kosikowski6
+    - TCU-minecraft124_
+    - TCU-qwertyps
+    - TCU-staffo95
+    - TCU-littleme48
+    - TCU-Kevinbat
+    - TCU-KaleFaolan
+    - TCU-sgtsniffer
+    - TCU-TEXANNINJA
+    - TCU-ginie1
+    - TCU-c360
+    - TCU-Wednesdayy_z
+    - TCU-TheRedPigMan
+    OwnerAccount: TCU-Island_Banker
+    Name: Turtle Island Credit Union
+    Interest: 0.6
+    Owner: Island_Banker
+  BOA:
+    Fee: 500.0
+    Region: cc_lot_38
+    JoinFee: 500.0
+    Members:
+    - qewrs
+    - SnorkelHunter
+    - danielsun7
+    - komoto31
+    - Maxohmax6
+    - chaoskid118
+    - TheUnknownPilot
+    - DROZN
+    - Dudephant
+    - dannyhobby
+    - Blizzard1591
+    - creepierdog
+    - WolflerLegend
+    - BloodstainBlade
+    - Cruxcrater
+    - andydem401
+    MemberAccounts:
+    - BOA-qewrs
+    - BOA-SnorkelHunter
+    - BOA-danielsun7
+    - BOA-komoto31
+    - BOA-Maxohmax6
+    - BOA-chaoskid118
+    - BOA-TheUnknownPilot
+    - BOA-DROZN
+    - BOA-Dudephant
+    - BOA-dannyhobby
+    - BOA-Blizzard1591
+    - BOA-creepierdog
+    - BOA-WolflerLegend
+    - BOA-BloodstainBlade
+    - BOA-Cruxcrater
+    - BOA-andydem401
+    OwnerAccount: BOA-qewrs
+    Name: Bank Of Alexandria
+    Interest: 0.6
+    Owner: qewrs
+  QFB:
+    Fee: 100.0
+    Region: cc_lot_42
+    JoinFee: 100.0
+    Members:
+    - qfrog
+    - Soccerhak
+    - ninjaskill1
+    - jacob0174
+    - QFrog
+    - BudgemDingmules
+    - D1SEL
+    - JFiduk
+    MemberAccounts:
+    - QFB-qfrog
+    - QFB-Soccerhak
+    - QFB-ninjaskill1
+    - QFB-jacob0174
+    - QFB-QFrog
+    - QFB-BudgemDingmules
+    - QFB-D1SEL
+    - QFB-JFiduk
+    OwnerAccount: QFB-qfrog
+    Name: Quartz Frog Banking
+    Interest: 0.12
+    Owner: qfrog
+  S7:
+    Fee: 500.0
+    Region: cc_lot_36
+    JoinFee: 500.0
+    Members:
+    - ShootEmMoore
+    - ShootEmMoore
+    - Garuuda
+    - jessus92
+    - Nate719
+    - MP2E
+    - Zeedrick
+    - Only1cakelover
+    - Jeeesusss
+    - halodude23100
+    - lolzart
+    - Angofwolf
+    - schmical
+    - Jesse_is_sexy
+    - JWotton
+    - tester4401
+    - SFC_Badman
+    - battlezeke98965
+    - Aloysius_OHare
+    - Andy_Rog3
+    - TheDeceacedGamer
+    - goldiron
+    - Ady6195
+    MemberAccounts:
+    - S7-ShootEmMoore
+    - S7-ShootEmMoore
+    - S7-Garuuda
+    - S7-jessus92
+    - S7-Nate719
+    - S7-MP2E
+    - S7-Zeedrick
+    - S7-Only1cakelover
+    - S7-Jeeesusss
+    - S7-halodude23100
+    - S7-lolzart
+    - S7-Angofwolf
+    - S7-schmical
+    - S7-Jesse_is_sexy
+    - S7-JWotton
+    - S7-tester4401
+    - S7-SFC_Badman
+    - S7-battlezeke98965
+    - S7-Aloysius_OHare
+    - S7-Andy_Rog3
+    - S7-TheDeceacedGamer
+    - S7-goldiron
+    - S7-Ady6195
+    OwnerAccount: S7-ShootEmMoore
+    Name: S7
+    Interest: 0.6
+    Owner: ShootEmMoore
+  JEB:
+    Fee: 50.0
+    Region: ti_lot_59
+    JoinFee: 50.0
+    Members:
+    - HEDGIE8
+    - Jazknight
+    - nimbus289
+    - japantitan
+    MemberAccounts:
+    - JEB-HEDGIE8
+    - JEB-Jazknight
+    - JEB-nimbus289
+    - JEB-japantitan
+    OwnerAccount: JEB-japantitan
+    Name: Japan Easy Banking
+    Interest: 0.06
+    Owner: japantitan
+  ION:
+    Fee: 400.0
+    Region: cc_lot_47
+    JoinFee: 400.0
+    Members:
+    - roondak
+    - Nyx27
+    - Nyx72
+    - Roondak
+    - Dormantus
+    - HerpDerp2332
+    - rocketholden
+    MemberAccounts:
+    - ION-roondak
+    - ION-Nyx27
+    - ION-Nyx72
+    - ION-Roondak
+    - ION-Dormantus
+    - ION-HerpDerp2332
+    - ION-rocketholden
+    OwnerAccount: ION-roondak
+    Name: Imperial Bank Of Neopolis
+    Interest: 0.6
+    Owner: roondak
+  BTV:
+    Fee: 50.0
+    Region: cc_lot_21
+    JoinFee: 50.0
+    Members:
+    - borkefer
+    MemberAccounts:
+    - BTV-borkefer
+    OwnerAccount: BTV-borkefer
+    Name: Bank_Of_The_Valley
+    Interest: 0.06
+    Owner: borkefer
+  BOF:
+    Fee: 250.0
+    Region: fi_lot_8
+    JoinFee: 250.0
+    Members:
+    - tmck2011
+    - tmck2011
+    - Darknessbuilder
+    - BadWolf25
+    - chairman145
+    - soccergod79
+    - d1m0a1n
+    - vadamx
+    MemberAccounts:
+    - BOF-tmck2011
+    - BOF-tmck2011
+    - BOF-Darknessbuilder
+    - BOF-BadWolf25
+    - BOF-chairman145
+    - BOF-soccergod79
+    - BOF-d1m0a1n
+    - BOF-vadamx
+    OwnerAccount: BOF-tmck2011
+    Name: BankOfFiamma
+    Interest: 0.3
+    Owner: tmck2011
+  TBU:
+    Fee: 50.0
+    Region: cc_lot_32
+    JoinFee: 50.0
+    Members:
+    - japantitan
+    - japantitan
+    MemberAccounts:
+    - TBU-japantitan
+    - TBU-japantitan
+    OwnerAccount: TBU-japantitan
+    Name: TitanBankingUnion
+    Interest: 0.06
+    Owner: japantitan
+Players:
+  datboy0401:
+    Bank: CCB
+    Account: CCB-datboy0401
+  bloomingkidd:
+    Bank: BON
+    Account: BON-bloomingkidd
+  somewhatsam:
+    Bank: BOU
+    Account: BOU-somewhatsam
+  tcb4:
+    Bank: JSL
+    Account: JSL-tcb4
+  ragedice:
+    Bank: NSL
+    Account: NSL-ragedice
+  Dogman68112:
+    Bank: TB
+    Account: TB-Dogman68112
+  CptnCrafter:
+    Bank: JSL
+    Account: JSL-CptnCrafter
+  Crotan:
+    Bank: JSL
+    Account: JSL-Crotan
+  luigiman12100:
+    Bank: BON
+    Account: BON-luigiman12100
+  wonderllama4554:
+    Bank: CCB
+    Account: CCB-wonderllama4554
+  Remmylaw:
+    Bank: BON
+    Account: BON-Remmylaw
+  MalgustheGreat:
+    Bank: TB
+    Account: TB-MalgustheGreat
+  Empirarte:
+    Bank: JSL
+    Account: JSL-Empirarte
+  japantitan:
+    Bank: TBU
+    Account: TBU-japantitan
+  iKayyJayy:
+    Bank: JSL
+    Account: JSL-iKayyJayy
+  Ethanscool101:
+    Bank: JSL
+    Account: JSL-Ethanscool101
+  jagawatz:
+    Bank: JSL
+    Account: JSL-jagawatz
+  Krado:
+    Bank: BOU
+    Account: BOU-Krado
+  Thaddeus12:
+    Bank: JSL
+    Account: JSL-Thaddeus12
+  GhostFighter42:
+    Bank: SB
+    Account: SB-GhostFighter42
+  MinerJoe1998:
+    Bank: BON
+    Account: BON-MinerJoe1998
+  Blade1212:
+    Bank: BON
+    Account: BON-Blade1212
+  Soccerhak:
+    Bank: QFB
+    Account: QFB-Soccerhak
+  TheNakedBor:
+    Bank: JSL
+    Account: JSL-TheNakedBor
+  Frank_283:
+    Bank: BON
+    Account: BON-Frank_283
+  _Lilah_:
+    Bank: JSL
+    Account: JSL-_Lilah_
+  huntercj1476:
+    Bank: BON
+    Account: BON-huntercj1476
+  jgmeeks:
+    Bank: BON
+    Account: BON-jgmeeks
+  SnorkelHunter:
+    Bank: BOA
+    Account: BOA-SnorkelHunter
+  doubletfan5:
+    Bank: JSL
+    Account: JSL-doubletfan5
+  jorn_m69:
+    Bank: BON
+    Account: BON-jorn_m69
+  atmfan5:
+    Bank: JSL
+    Account: JSL-atmfan5
+  qaws711:
+    Bank: BON
+    Account: BON-qaws711
+  sj1121:
+    Bank: TB
+    Account: TB-sj1121
+  Valkhan80:
+    Bank: BON
+    Account: BON-Valkhan80
+  fjupu:
+    Bank: BOV
+    Account: BOV-fjupu
+  Milqee:
+    Bank: BON
+    Account: BON-Milqee
+  Xrent:
+    Bank: JSL
+    Account: JSL-Xrent
+  qewrs:
+    Bank: BOA
+    Account: BOA-qewrs
+  danielsun7:
+    Bank: BOA
+    Account: BOA-danielsun7
+  tinycrash246:
+    Bank: BON
+    Account: BON-tinycrash246
+  Levifitch:
+    Bank: MW
+    Account: MW-Levifitch
+  titonicshark123:
+    Bank: JSL
+    Account: JSL-titonicshark123
+  andy04306:
+    Bank: SB
+    Account: SB-andy04306
+  Zyba:
+    Bank: NSL
+    Account: NSL-Zyba
+  InXanity:
+    Bank: BON
+    Account: BON-InXanity
+  Zinkopus:
+    Bank: JSL
+    Account: JSL-Zinkopus
+  NickM5053:
+    Bank: BON
+    Account: BON-NickM5053
+  CrimsonPlague:
+    Bank: BOV
+    Account: BOV-CrimsonPlague
+  lightningblaze:
+    Bank: BOV
+    Account: BOV-lightningblaze
+  boots2290:
+    Bank: BON
+    Account: BON-boots2290
+  Seerahili:
+    Bank: CCB
+    Account: CCB-Seerahili
+  redrum64:
+    Bank: SB
+    Account: SB-redrum64
+  thisissparta21:
+    Bank: BON
+    Account: BON-thisissparta21
+  komoto31:
+    Bank: BOA
+    Account: BOA-komoto31
+  randomdude9160:
+    Bank: BON
+    Account: BON-randomdude9160
+  8patar:
+    Bank: BON
+    Account: BON-8patar
+  Jackim:
+    Bank: BON
+    Account: BON-Jackim
+  trivers1:
+    Bank: BON
+    Account: BON-trivers1
+  oisinrc:
+    Bank: BON
+    Account: BON-oisinrc
+  minijasper1:
+    Bank: JSL
+    Account: JSL-minijasper1
+  Reiu1:
+    Bank: JSL
+    Account: JSL-Reiu1
+  johnucc1:
+    Bank: BON
+    Account: BON-johnucc1
+  MPRO_TITI:
+    Bank: CCB
+    Account: CCB-MPRO_TITI
+  aaronbonez60:
+    Bank: NSL
+    Account: NSL-aaronbonez60
+  2steper808:
+    Bank: BON
+    Account: BON-2steper808
+  zeclar999:
+    Bank: JSL
+    Account: JSL-zeclar999
+  beastanator:
+    Bank: JSL
+    Account: JSL-beastanator
+  BurlyAssassin:
+    Bank: JSL
+    Account: JSL-BurlyAssassin
+  100kev:
+    Bank: BON
+    Account: BON-100kev
+  SuperJewNinja:
+    Bank: JSL
+    Account: JSL-SuperJewNinja
+  deltaboy59:
+    Bank: SB
+    Account: SB-deltaboy59
+  123firebird4:
+    Bank: JSL
+    Account: JSL-123firebird4
+  snakebug:
+    Bank: CCB
+    Account: CCB-snakebug
+  Whitedryad:
+    Bank: TB
+    Account: TB-Whitedryad
+  iTz_Tek:
+    Bank: TB
+    Account: TB-iTz_Tek
+  qwertyps:
+    Bank: TCU
+    Account: TCU-qwertyps
+  shutupurmom:
+    Bank: JSL
+    Account: JSL-shutupurmom
+  Fluffikin:
+    Bank: BOV
+    Account: BOV-Fluffikin
+  zehliquid:
+    Bank: MW
+    Account: MW-zehliquid
+  Maxohmax6:
+    Bank: BOA
+    Account: BOA-Maxohmax6
+  BloodstainBlade:
+    Bank: BOA
+    Account: BOA-BloodstainBlade
+  jamesisamazing:
+    Bank: BON
+    Account: BON-jamesisamazing
+  ArcMan:
+    Bank: MW
+    Account: MW-ArcMan
+  andurilkeuk:
+    Bank: JSL
+    Account: JSL-andurilkeuk
+  VISKASE900:
+    Bank: CCB
+    Account: CCB-VISKASE900
+  zSHADOW:
+    Bank: BON
+    Account: BON-zSHADOW
+  NsTra_Shieldz:
+    Bank: BON
+    Account: BON-NsTra_Shieldz
+  minecraft124_:
+    Bank: TCU
+    Account: TCU-minecraft124_
+  greeno96:
+    Bank: BOU
+    Account: BOU-greeno96
+  Island_Banker:
+    Bank: TCU
+    Account: TCU-Island_Banker
+  bloodscape38:
+    Bank: JSL
+    Account: JSL-bloodscape38
+  horse00:
+    Bank: CCB
+    Account: CCB-horse00
+  lordnaylor:
+    Bank: JSL
+    Account: JSL-lordnaylor
+  bdabeast456:
+    Bank: BON
+    Account: BON-bdabeast456
+  tylerrip11:
+    Bank: JSL
+    Account: JSL-tylerrip11
+  minemannx:
+    Bank: BOV
+    Account: BOV-minemannx
+  pigman21:
+    Bank: JSL
+    Account: JSL-pigman21
+  baldturtle:
+    Bank: MW
+    Account: MW-baldturtle
+  _CaptainCake:
+    Bank: JSL
+    Account: JSL-_CaptainCake
+  DragonV856:
+    Bank: BON
+    Account: BON-DragonV856
+  Heliplx:
+    Bank: JSL
+    Account: JSL-Heliplx
+  jacob811:
+    Bank: CCB
+    Account: CCB-jacob811
+  MisterBuster:
+    Bank: BOU
+    Account: BOU-MisterBuster
+  murnerr:
+    Bank: BOU
+    Account: BOU-murnerr
+  deathbringer3557:
+    Bank: TB
+    Account: TB-deathbringer3557
+  Allzthedevil:
+    Bank: BOV
+    Account: BOV-Allzthedevil
+  BlackNin:
+    Bank: TCU
+    Account: TCU-BlackNin
+  zackymc:
+    Bank: BOU
+    Account: BOU-zackymc
+  ghosttr:
+    Bank: JSL
+    Account: JSL-ghosttr
+  nakedzombies69n:
+    Bank: JSL
+    Account: JSL-nakedzombies69n
+  tdawgthegangster:
+    Bank: JSL
+    Account: JSL-tdawgthegangster
+  swazeyyy:
+    Bank: JSL
+    Account: JSL-swazeyyy
+  Happy_G:
+    Bank: CIC
+    Account: CIC-Happy_G
+  ldani98:
+    Bank: TB
+    Account: TB-ldani98
+  ShootEmMoore:
+    Bank: S7
+    Account: S7-ShootEmMoore
+  thewolfsniper:
+    Bank: JSL
+    Account: JSL-thewolfsniper
+  RayLewisPanda:
+    Bank: BOV
+    Account: BOV-RayLewisPanda
+  BurningVortex182:
+    Bank: BOU
+    Account: BOU-BurningVortex182
+  chaoskid118:
+    Bank: BOA
+    Account: BOA-chaoskid118
+  XxNinja_Nguyen:
+    Bank: MW
+    Account: MW-XxNinja_Nguyen
+  neokyle21:
+    Bank: BOU
+    Account: BOU-neokyle21
+  BudgemDingmules:
+    Bank: QFB
+    Account: QFB-BudgemDingmules
+  bob_your_uncle:
+    Bank: NSL
+    Account: NSL-bob_your_uncle
+  Xperialp:
+    Bank: TCU
+    Account: TCU-Xperialp
+  Awolfers:
+    Bank: BOU
+    Account: BOU-Awolfers
+  douglashowell:
+    Bank: BON
+    Account: BON-douglashowell
+  x_Griim:
+    Bank: BOV
+    Account: BOV-x_Griim
+  TheUnknownPilot:
+    Bank: BOA
+    Account: BOA-TheUnknownPilot
+  DROZN:
+    Bank: BOA
+    Account: BOA-DROZN
+  berryman03:
+    Bank: SB
+    Account: SB-berryman03
+  IDeadlyDanI:
+    Bank: BON
+    Account: BON-IDeadlyDanI
+  OutbreakGaming:
+    Bank: BOU
+    Account: BOU-OutbreakGaming
+  Dudephant:
+    Bank: BOA
+    Account: BOA-Dudephant
+  loofty:
+    Bank: JSL
+    Account: JSL-loofty
+  BaconCreator:
+    Bank: BOV
+    Account: BOV-BaconCreator
+  mistyblade:
+    Bank: JSL
+    Account: JSL-mistyblade
+  MankyMitch:
+    Bank: JSL
+    Account: JSL-MankyMitch
+  dannyhobby:
+    Bank: BOA
+    Account: BOA-dannyhobby
+  t_lie:
+    Bank: BOV
+    Account: BOV-t_lie
+  brandonk:
+    Bank: BON
+    Account: BON-brandonk
+  lrcrl:
+    Bank: VTB
+    Account: VTB-lrcrl
+  MattCrinos:
+    Bank: JSL
+    Account: JSL-MattCrinos
+  campipe:
+    Bank: JSL
+    Account: JSL-campipe
+  hahafunny12:
+    Bank: CCB
+    Account: CCB-hahafunny12
+  CentralGuard:
+    Bank: JSL
+    Account: JSL-CentralGuard
+  AlphaAhab:
+    Bank: BON
+    Account: BON-AlphaAhab
+  thackyt:
+    Bank: JSL
+    Account: JSL-thackyt
+  megajasper123:
+    Bank: JSL
+    Account: JSL-megajasper123
+  Two_Face007:
+    Bank: BON
+    Account: BON-Two_Face007
+  luigiman12:
+    Bank: JSL
+    Account: JSL-luigiman12
+  Kosikowski6:
+    Bank: TCU
+    Account: TCU-Kosikowski6
+  qfrog:
+    Bank: QFB
+    Account: QFB-qfrog
+  Xemos:
+    Bank: TCU
+    Account: TCU-Xemos
+  samyboy101:
+    Bank: CCB
+    Account: CCB-samyboy101
+  BobberWCC:
+    Bank: BON
+    Account: BON-BobberWCC
+  Kosikowski_6:
+    Bank: NSL
+    Account: NSL-Kosikowski_6
+  MLGbear:
+    Bank: SB
+    Account: SB-MLGbear
+  Blizzard1591:
+    Bank: BOA
+    Account: BOA-Blizzard1591
+  monkmasta:
+    Bank: CIC
+    Account: CIC-monkmasta
+  pittman789:
+    Bank: JSL
+    Account: JSL-pittman789
+  Stalebagel:
+    Bank: BON
+    Account: BON-Stalebagel
+  evanf94:
+    Bank: BOU
+    Account: BOU-evanf94
+  Mr_Zathas:
+    Bank: BOV
+    Account: BOV-Mr_Zathas
+  ninjaskill1:
+    Bank: QFB
+    Account: QFB-ninjaskill1
+  creepierdog:
+    Bank: BOA
+    Account: BOA-creepierdog
+  DarkTengu:
+    Bank: BOV
+    Account: BOV-DarkTengu
+  BambooBill:
+    Bank: TCU
+    Account: TCU-BambooBill
+  Cebekazu:
+    Bank: JSL
+    Account: JSL-Cebekazu
+  rudytoots:
+    Bank: MW
+    Account: MW-rudytoots
+  mine_killer14:
+    Bank: TB
+    Account: TB-mine_killer14
+  MINER86:
+    Bank: JSL
+    Account: JSL-MINER86
+  hallpi:
+    Bank: BON
+    Account: BON-hallpi
+  templar24:
+    Bank: JSL
+    Account: JSL-templar24
+  facebaak:
+    Bank: JSL
+    Account: JSL-facebaak
+  jeremyiscool101:
+    Bank: DTS
+    Account: DTS-jeremyiscool101
+  jx631:
+    Bank: JSL
+    Account: JSL-jx631
+  xmantoo00:
+    Bank: BON
+    Account: BON-xmantoo00
+  brods89:
+    Bank: CCB
+    Account: CCB-brods89
+  kaleb59:
+    Bank: NSL
+    Account: NSL-kaleb59
+  jacob0174:
+    Bank: QFB
+    Account: QFB-jacob0174
+  mythcaptor:
+    Bank: JSL
+    Account: JSL-mythcaptor
+  firetire100:
+    Bank: TCU
+    Account: TCU-firetire100
+  planetyonx:
+    Bank: TCU
+    Account: TCU-planetyonx
+  Garuuda:
+    Bank: S7
+    Account: S7-Garuuda
+  WolflerLegend:
+    Bank: BOA
+    Account: BOA-WolflerLegend
+  twilightking:
+    Bank: JSL
+    Account: JSL-twilightking
+  schlango:
+    Bank: BON
+    Account: BON-schlango
+  pretzelguy1:
+    Bank: BOU
+    Account: BOU-pretzelguy1
+  TokioKev:
+    Bank: BON
+    Account: BON-TokioKev
+  slash1219:
+    Bank: BON
+    Account: BON-slash1219
+  12mik:
+    Bank: NSL
+    Account: NSL-12mik
+  jrlop99:
+    Bank: JSL
+    Account: JSL-jrlop99
+  DonutBoi:
+    Bank: SB
+    Account: SB-DonutBoi
+  ixincineration:
+    Bank: BOV
+    Account: BOV-ixincineration
+  cedward93:
+    Bank: JSL
+    Account: JSL-cedward93
+  Zetsub0:
+    Bank: BON
+    Account: BON-Zetsub0
+  asablic:
+    Bank: BOU
+    Account: BOU-asablic
+  Dshadow34:
+    Bank: BON
+    Account: BON-Dshadow34
+  darkzune:
+    Bank: CCB
+    Account: CCB-darkzune
+  Steeps7:
+    Bank: TCU
+    Account: TCU-Steeps7
+  Astrogod07:
+    Bank: JSL
+    Account: JSL-Astrogod07
+  Steeps5:
+    Bank: TCU
+    Account: TCU-Steeps5
+  Djiblack:
+    Bank: BOV
+    Account: BOV-Djiblack
+  Cruxcrater:
+    Bank: BOA
+    Account: BOA-Cruxcrater
+  thebirdman123:
+    Bank: BON
+    Account: BON-thebirdman123
+  clubguy:
+    Bank: JSL
+    Account: JSL-clubguy
+  masterman626:
+    Bank: CCB
+    Account: CCB-masterman626
+  adyboo6195:
+    Bank: NSL
+    Account: NSL-adyboo6195
+  QFrog:
+    Bank: QFB
+    Account: QFB-QFrog
+  collimacreta34:
+    Bank: BON
+    Account: BON-collimacreta34
+  jthe111:
+    Bank: JSL
+    Account: JSL-jthe111
+  BlairBros:
+    Bank: JSL
+    Account: JSL-BlairBros
+  Kendued:
+    Bank: BON
+    Account: BON-Kendued
+  SFC_Badman:
+    Bank: S7
+    Account: S7-SFC_Badman
+  Golden4:
+    Bank: JSL
+    Account: JSL-Golden4
+  rexrapter1234:
+    Bank: NSL
+    Account: NSL-rexrapter1234
+  jessus92:
+    Bank: S7
+    Account: S7-jessus92
+  Nate719:
+    Bank: S7
+    Account: S7-Nate719
+  Jaypro1997:
+    Bank: JSL
+    Account: JSL-Jaypro1997
+  fishyboy3:
+    Bank: SB
+    Account: SB-fishyboy3
+  iCondawgs:
+    Bank: JSL
+    Account: JSL-iCondawgs
+  Cool_Lama:
+    Bank: TCU
+    Account: TCU-Cool_Lama
+  matmat99:
+    Bank: JSL
+    Account: JSL-matmat99
+  MP2E:
+    Bank: S7
+    Account: S7-MP2E
+  FreakyCupcake:
+    Bank: JSL
+    Account: JSL-FreakyCupcake
+  Jesus109:
+    Bank: SB
+    Account: SB-Jesus109
+  squidgen: {}
+  Swift_Chillz:
+    Bank: JSL
+    Account: JSL-Swift_Chillz
+  HEDGIE8:
+    Bank: JEB
+    Account: JEB-HEDGIE8
+  Jazknight:
+    Bank: JEB
+    Account: JEB-Jazknight
+  Encoded2:
+    Bank: JSL
+    Account: JSL-Encoded2
+  caelan1503:
+    Bank: CCB
+    Account: CCB-caelan1503
+  VolatileOstrich:
+    Bank: JSL
+    Account: JSL-VolatileOstrich
+  w00kiee20:
+    Bank: BON
+    Account: BON-w00kiee20
+  CobbleAddict:
+    Bank: JSL
+    Account: JSL-CobbleAddict
+  donutboy10: {}
+  gecko670: {}
+  prabhjotl: {}
+  Zeedrick:
+    Bank: S7
+    Account: S7-Zeedrick
+  nimbus289:
+    Bank: JEB
+    Account: JEB-nimbus289
+  ShaggyTheScene:
+    Bank: SB
+    Account: SB-ShaggyTheScene
+  WCxACEofCLUBS:
+    Bank: JSL
+    Account: JSL-WCxACEofCLUBS
+  SneakyMiner4life:
+    Bank: JSL
+    Account: JSL-SneakyMiner4life
+  istalku:
+    Bank: JSL
+    Account: JSL-istalku
+  xcraft96:
+    Bank: SB
+    Account: SB-xcraft96
+  Angofwolf:
+    Bank: S7
+    Account: S7-Angofwolf
+  RicePlease:
+    Bank: TCU
+    Account: TCU-RicePlease
+  D1SEL:
+    Bank: QFB
+    Account: QFB-D1SEL
+  KyleWeekley: {}
+  JFiduk:
+    Bank: QFB
+    Account: QFB-JFiduk
+  tmck2011:
+    Bank: BOF
+    Account: BOF-tmck2011
+  zekeman615:
+    Bank: JSL
+    Account: JSL-zekeman615
+  Only1cakelover:
+    Bank: S7
+    Account: S7-Only1cakelover
+  unbracedbeast:
+    Bank: JSL
+    Account: JSL-unbracedbeast
+  TreePuncher2140:
+    Bank: JSL
+    Account: JSL-TreePuncher2140
+  Jeeesusss:
+    Bank: S7
+    Account: S7-Jeeesusss
+  MrCornpopz:
+    Bank: SB
+    Account: SB-MrCornpopz
+  huntlol10:
+    Bank: JSL
+    Account: JSL-huntlol10
+  OddLord23:
+    Bank: NSL
+    Account: NSL-OddLord23
+  vjunkie:
+    Bank: JSL
+    Account: JSL-vjunkie
+  Cosmin1215:
+    Bank: TCU
+    Account: TCU-Cosmin1215
+  noobie05:
+    Bank: TCU
+    Account: TCU-noobie05
+  Camden2001:
+    Bank: JSL
+    Account: JSL-Camden2001
+  halodude23100:
+    Bank: S7
+    Account: S7-halodude23100
+  Cat_PurrsBOOM:
+    Bank: CCB
+    Account: CCB-Cat_PurrsBOOM
+  Sontersaurus: {}
+  n3hellfire:
+    Bank: JSL
+    Account: JSL-n3hellfire
+  lolzart:
+    Bank: S7
+    Account: S7-lolzart
+  borkefer:
+    Bank: JSL
+    Account: JSL-borkefer
+  naryz:
+    Bank: JSL
+    Account: JSL-naryz
+  luxor99: {}
+  TEXANNINJA:
+    Bank: TCU
+    Account: TCU-TEXANNINJA
+  plophead32:
+    Bank: BOU
+    Account: BOU-plophead32
+  JWotton:
+    Bank: S7
+    Account: S7-JWotton
+  staffo95:
+    Bank: TCU
+    Account: TCU-staffo95
+  TotalMiner112:
+    Bank: JSL
+    Account: JSL-TotalMiner112
+  Nyx27:
+    Bank: ION
+    Account: ION-Nyx27
+  Nyx72:
+    Bank: ION
+    Account: ION-Nyx72
+  ExProGunner:
+    Bank: JSL
+    Account: JSL-ExProGunner
+  Massam10:
+    Bank: JSL
+    Account: JSL-Massam10
+  Roondak:
+    Bank: ION
+    Account: ION-Roondak
+  Dormantus:
+    Bank: ION
+    Account: ION-Dormantus
+  HerpDerp2332:
+    Bank: ION
+    Account: ION-HerpDerp2332
+  schmical:
+    Bank: S7
+    Account: S7-schmical
+  Jesse_is_sexy:
+    Bank: S7
+    Account: S7-Jesse_is_sexy
+  tester4401:
+    Bank: S7
+    Account: S7-tester4401
+  littleme48:
+    Bank: TCU
+    Account: TCU-littleme48
+  Kevinbat:
+    Bank: TCU
+    Account: TCU-Kevinbat
+  KaleFaolan:
+    Bank: TCU
+    Account: TCU-KaleFaolan
+  colebennington:
+    Bank: BOU
+    Account: BOU-colebennington
+  sgtsniffer:
+    Bank: TCU
+    Account: TCU-sgtsniffer
+  Yuzacc:
+    Bank: JSL
+    Account: JSL-Yuzacc
+  Ragedice:
+    Bank: NSL
+    Account: NSL-Ragedice
+  ginie1:
+    Bank: TCU
+    Account: TCU-ginie1
+  zGLostBoy:
+    Bank: BOU
+    Account: BOU-zGLostBoy
+  battlezeke98965:
+    Bank: S7
+    Account: S7-battlezeke98965
+  Aloysius_OHare:
+    Bank: S7
+    Account: S7-Aloysius_OHare
+  Andy_Rog3:
+    Bank: S7
+    Account: S7-Andy_Rog3
+  TheDeceacedGamer:
+    Bank: S7
+    Account: S7-TheDeceacedGamer
+  rocketholden:
+    Bank: ION
+    Account: ION-rocketholden
+  TheRedPigMan:
+    Bank: TCU
+    Account: TCU-TheRedPigMan
+  c360:
+    Bank: TCU
+    Account: TCU-c360
+  NeonPegasus:
+    Bank: JSL
+    Account: JSL-NeonPegasus
+  Wednesdayy_z:
+    Bank: TCU
+    Account: TCU-Wednesdayy_z
+  pokepearl:
+    Bank: CCB
+    Account: CCB-pokepearl
+  andydem401:
+    Bank: BOA
+    Account: BOA-andydem401
+  Deatux17:
+    Bank: JSL
+    Account: JSL-Deatux17
+  goldiron:
+    Bank: S7
+    Account: S7-goldiron
+  ironpenguin:
+    Bank: JSL
+    Account: JSL-ironpenguin
+  matilda8147:
+    Bank: JSL
+    Account: JSL-matilda8147
+  Ady6195:
+    Bank: S7
+    Account: S7-Ady6195
+  iiixZLCxiii: {}
+  Jaykiel: {}
+  Darknessbuilder:
+    Bank: BOF
+    Account: BOF-Darknessbuilder
+  BadWolf25:
+    Bank: BOF
+    Account: BOF-BadWolf25
+  chairman145:
+    Bank: BOF
+    Account: BOF-chairman145
+  SmellyPenguin:
+    Bank: JSL
+    Account: JSL-SmellyPenguin
+  XBLKU5H:
+    Bank: JSL
+    Account: JSL-XBLKU5H
+  IHNF:
+    Bank: JSL
+    Account: JSL-IHNF
+  Whoosh21:
+    Bank: JSL
+    Account: JSL-Whoosh21
+  d1m0a1n:
+    Bank: BOF
+    Account: BOF-d1m0a1n
+  soccergod79:
+    Bank: BOF
+    Account: BOF-soccergod79
+  vadamx:
+    Bank: BOF
+    Account: BOF-vadamx
+  Typical_Tim:
+    Bank: JSL
+    Account: JSL-Typical_Tim

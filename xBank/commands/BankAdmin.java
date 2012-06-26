@@ -150,6 +150,7 @@ player.sendMessage("Bad NEO!!  You no do this yet!");
 		List<String> accHolders = null;
 		double total = 0;
 		String member = "";
+		String region ="";
 		String ID = "";
 		double sum =0;
 		
@@ -162,6 +163,10 @@ player.sendMessage("Bad NEO!!  You no do this yet!");
 				member = accHolders.get(y);
 				sum += (getHoldings(ID + "-" + member));
 			}
+			region = config.getString("Banks." + ID + ".Region");
+			config.set("Region", region);
+			config.set("Location." + region, ID);
+			
 			config.set("Banks." + ID + ".Total", sum);
 			total += sum;
 			sum = 0;
@@ -170,6 +175,8 @@ player.sendMessage("Bad NEO!!  You no do this yet!");
 		config.set("Banks.Total", total);
 		player.sendMessage("The bank totals have been recalculated.");
 		plugin.saveConfig();
+		
+		
 		
 		return true;
 	}

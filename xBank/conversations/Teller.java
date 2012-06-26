@@ -1,6 +1,8 @@
 package xBank.conversations;
 
+import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.conversations.ConversationAbandonedEvent;
 import org.bukkit.conversations.ConversationAbandonedListener;
 import org.bukkit.conversations.ConversationContext;
@@ -12,6 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import xBank.Core;
+import xBank.commands.bankCommand;
 
 ///testing github - eclipse sync
 
@@ -33,6 +36,7 @@ public class Teller implements CommandExecutor, ConversationAbandonedListener {
                 .addConversationAbandonedListener(this)
                 .withFirstPrompt(new FirstPrompt(pName, bName, mem));
     }
+    
     
     //We need a point where to start the conversation
     public void start(Player pl)
@@ -110,7 +114,17 @@ private class MemberPrompt extends ValidatingPrompt
             }
             else
             {
-               
+            	private Core bc;
+            	this.bc = bankCommand;
+            	
+            	
+            	
+            	
+            	
+            	
+            	
+            	
+              
             }
         }
         if(split[0].equalsIgnoreCase("leave"))
@@ -289,6 +303,13 @@ private class NonMemberPrompt extends ValidatingPrompt
  
         return true;
     }
+}
+
+@Override
+public boolean onCommand(CommandSender arg0, Command arg1, String arg2,
+		String[] arg3) {
+	// TODO Auto-generated method stub
+	return false;
 }
 
 }

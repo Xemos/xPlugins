@@ -2,7 +2,7 @@ package xBank.commands;
 
 import java.util.List;
 import xBank.Core;
-//import xBank.conversations.Teller;  TODO
+//import xBank.conversations.Teller;  
 
 import org.bukkit.ChatColor;
 import org.bukkit.World;
@@ -62,16 +62,16 @@ public class bankCommand implements CommandExecutor {
 		}
 		
 		String CB = config.getString("Location." + currentBankRegion(player));
-	//	boolean member = true; TODO
+		//boolean member = true; 
 		
 		switch (args[0].toLowerCase()) {
-		case "teller":
+		/*case "teller":
 			if(CB != getBankAccount(player))
 				member = false;
 
 			//Thats everything we need to do now:
-			new Teller(player.getName(), getBankAccount(player), member).start(player);
-			return true;
+			new Teller(player.getName(), getBankAccount(player), member, plugin).start(player);
+			return true;*/
 		case "members":		
 
 			if (isInBank(player)){
