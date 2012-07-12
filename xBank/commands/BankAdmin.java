@@ -1,5 +1,8 @@
 package xBank.commands;
 
+
+
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Bukkit;
@@ -15,6 +18,7 @@ import ru.tehkode.permissions.bukkit.PermissionsEx;
 
 import xBank.Core;
 
+import com.iConomy.iConomy;
 import com.iConomy.system.Holdings;
 
 public class BankAdmin implements CommandExecutor {
@@ -51,6 +55,12 @@ public class BankAdmin implements CommandExecutor {
 			Player player = (Player) sender;
 
 			if (pex.has(player, "bank.admin")) {
+				
+				if(args.length == 0){
+					player.sendMessage("Bad NEO!!  Y U no HAZ COMMANDS!!!");
+					player.sendMessage("| Update | Delete | Rank | Level | Total | Limit |");
+					return true;
+				}
 				switch (args[0]) {
 
 				case "level":
@@ -74,9 +84,9 @@ player.sendMessage("Bad NEO!!  You no do this yet!");
 					player.sendMessage("Bad NEO!!  You no do this yet!");
 					return true;
 				case "total":
-					if(args[1] != null){
-						if(bankExists(args[1])){
-							doTotal(player, args[1]);
+					if( args.length == 2){
+						if(bankExists(args[1].toUpperCase())){
+							doTotal(player, args[1].toUpperCase());
 						}else{
 							player.sendMessage("Neo, " + args[1] + " Does not exist!");
 						}
@@ -97,11 +107,11 @@ player.sendMessage("Bad NEO!!  You no do this yet!");
 	
 	private void doTotal(Player player) {
 		
-		player.sendMessage("The total in all banks is " + config.getString("Banks.Total"));
+		player.sendMessage("The total in all banks is " + iConomy.format(Double.valueOf(config.getString("Banks.Total"))));
 	}
 
 	private void doTotal(Player player, String ID) {
-		player.sendMessage("The total in " + ID + " is " + config.getString("Banks." + ID + ".Total"));
+		player.sendMessage("The total in " + ID + " is " + iConomy.format(Double.valueOf(config.getString("Banks." + ID + ".Total"))));
 		
 	}
 
@@ -148,11 +158,12 @@ player.sendMessage("Bad NEO!!  You no do this yet!");
 		
 		List<String> banks = config.getStringList("Banks.List");
 		List<String> accHolders = null;
-		double total = 0;
+		int total = 0;
 		String member = "";
-		String region ="";
+		ArrayList<String> region = new ArrayList<String>();
 		String ID = "";
-		double sum =0;
+		int sum =0;
+		
 		
 		
 		
@@ -162,16 +173,26 @@ player.sendMessage("Bad NEO!!  You no do this yet!");
 			for (int y = 0; y < accHolders.size(); y++){
 				member = accHolders.get(y);
 				sum += (getHoldings(ID + "-" + member));
+				
+				
 			}
-			region = config.getString("Banks." + ID + ".Region");
-			config.set("Region", region);
-			config.set("Location." + region, ID);
+			
+			if(!config.contains("Banks." + ID + ".Membercap")){
+				config.set("Banks." + ID + ".Membercap",8);
+				plugin.saveConfig();
+			}
+			
+			region.add(x,config.getString("Banks." + ID + ".Region"));
+			
+			config.set("Location." + region.get(x), ID);
 			
 			config.set("Banks." + ID + ".Total", sum);
+			plugin.saveConfig();
 			total += sum;
 			sum = 0;
 			accHolders = null;
 		}
+		config.set("Region", region);
 		config.set("Banks.Total", total);
 		player.sendMessage("The bank totals have been recalculated.");
 		plugin.saveConfig();
@@ -192,7 +213,9 @@ player.sendMessage("Bad NEO!!  You no do this yet!");
 	@SuppressWarnings("static-access")
 	private double getHoldings(String name) {
 		Holdings balance = plugin.iConomy.getAccount(name).getHoldings();
+	
 		return balance.balance();
+		
 	}
 	
 	// check to see if the specified bank exists
