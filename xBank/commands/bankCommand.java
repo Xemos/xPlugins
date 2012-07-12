@@ -13,6 +13,7 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
+import com.iConomy.iConomy;
 import com.iConomy.system.Holdings;
 import com.sk89q.worldedit.Vector;
 
@@ -64,14 +65,16 @@ public class bankCommand implements CommandExecutor {
 		String CB = config.getString("Location." + currentBankRegion(player));
 		//boolean member = true; 
 		
-		switch (args[0].toLowerCase()) {
 		/*case "teller":
-			if(CB != getBankAccount(player))
-				member = false;
+		if(CB != getBankAccount(player))
+			member = false;
 
-			//Thats everything we need to do now:
-			new Teller(player.getName(), getBankAccount(player), member, plugin).start(player);
-			return true;*/
+		//Thats everything we need to do now:
+		new Teller(player.getName(), getBankAccount(player), member, plugin).start(player);
+		return true;*/
+		
+		switch (args[0].toLowerCase()) {
+		
 		case "members":		
 
 			if (isInBank(player)){
@@ -86,7 +89,12 @@ public class bankCommand implements CommandExecutor {
 		case "leave": {
 			if (isInBank(player)) {
 				if (isInOwnBankRegion(player)) {
-					leaveBank(player);
+					if(config.getString("Banks." + CB + "Owner") == player.getName()){
+						player.sendMessage(ChatColor.YELLOW
+								+ "You can not leave a bank that you own!");
+					} else {
+						leaveBank(player);
+					}
 				} else {
 					player.sendMessage(ChatColor.YELLOW
 							+ "You must be in your bank to use this command");
@@ -98,7 +106,7 @@ public class bankCommand implements CommandExecutor {
 		}
 		case "info": {
 			if (args.length == 2) {
-					bankInfo(player, args[1]);
+					bankInfo(player, args[1].toUpperCase());
 				 
 			} else if (CB != null) {
 				bankInfo(player,  CB);
@@ -118,8 +126,13 @@ public class bankCommand implements CommandExecutor {
 						+ config.getString("Players." + player.getName()
 								+ ".Bank"));
 			} else if (CB != null) {
-
-				joinBank(player, CB);
+				
+				if(config.getStringList("Banks." + CB + ".Members").size() < config.getInt("Banks." + CB + ".Membercap")){
+					joinBank(player, CB);
+				}else{
+					player.sendMessage(ChatColor.YELLOW
+							+ "Bank member limit exceeded.");
+				}
 			} else {
 				player.sendMessage(ChatColor.YELLOW
 						+ "You must be in a bank to use this command");
@@ -205,6 +218,7 @@ public class bankCommand implements CommandExecutor {
 
 	// gets bank info for a specific player when they use the /bank info command
 	private void bankInfo(Player player, String ID) {
+		
 		if (config.contains("Banks." + ID)) {
 			String name = config.getString("Banks." + ID + ".Name");
 			double interest = config.getDouble("Banks." + ID + ".Interest");
@@ -239,8 +253,8 @@ public class bankCommand implements CommandExecutor {
 			bank.add(amount - fee);
 			payBank(player, fee);
 			balance.subtract(amount);
-			player.sendMessage(ChatColor.YELLOW + "Deposited " + amount
-					+ " cn into your bank account");
+			player.sendMessage(ChatColor.YELLOW + "Deposited " + iConomy.format(amount)
+					+ " into your bank account");
 		} else {
 			player.sendMessage(ChatColor.YELLOW
 					+ "You do not have sufficient funds");
@@ -467,7 +481,8 @@ public class bankCommand implements CommandExecutor {
 	// code to pay the bank owner's account the transaction fees
 	private void payBank(Player player, double fee) {
 		String ID = getBankID(player);
-		payBankOwner(ID, (fee / 2));
+		fee = fee / 2;
+		payBankOwner(ID, fee);
 
 	}
 
@@ -511,14 +526,12 @@ public class bankCommand implements CommandExecutor {
 
 		Holdings bank = getBankHoldings(player);
 		Holdings balance = getHoldings(player.getName());
-		double fee = getBankFee(player);
 		if (bank.hasEnough(amount)) {
-			bank.subtract(amount + fee);
-			payBank(player, fee);
+			bank.subtract(amount);
 			balance.add(amount);
 
-			player.sendMessage(ChatColor.YELLOW + "Withdrawn " + amount
-					+ " cn from your bank account");
+			player.sendMessage(ChatColor.YELLOW + "Withdrawn " + iConomy.format(amount)
+					+ " from your bank account");
 		} else {
 			player.sendMessage(ChatColor.YELLOW
 					+ "You do not have sufficient funds");
