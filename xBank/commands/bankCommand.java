@@ -425,27 +425,48 @@ public class bankCommand implements CommandExecutor {
 	// code to leave a bank
 	@SuppressWarnings("static-access")
 	private void leaveBank(Player player) {
+		
+		Holdings bankAcc = null;
+		Holdings playerAcc = null;
+		String name = player.getName();
+		double monies = 0;
 
-		String ID = config.getString("Players." + player.getName() + ".Bank");
+		String ID = config.getString("Players." + name + ".Bank");
 
+		bankAcc = getAccount(getBankAccount(name));
+		playerAcc = getAccount(name);
+		monies = bankAcc.balance();
+		playerAcc.add(monies);
+		plugin.iConomy.Accounts.removeCompletely(getBankAccount(name));
+		
+		//Removes player's name from bank's roster 
 		List<String> members = config.getStringList("Banks." + ID + ".Members");
 		members.remove(player.getName());
 		config.set("Banks." + ID + ".Members", members);
-		config.set("Players." + player.getName() + ".Bank", null);
-		String accountname = config.getString("Players." + player.getName()
-				+ ".Account");
-		if (!plugin.iConomy.Accounts.exists(accountname)) {
-			plugin.iConomy.Accounts.remove(accountname);
-		}
-		config.set("Players." + player.getName() + ".Account", null);
-		List<String> memberaccounts = config.getStringList("Banks." + ID
-				+ ".MemberAccounts");
-		memberaccounts.remove(accountname);
+		
+		//Removes player's account from bank's roster 
+		List<String> memberaccounts = config.getStringList("Banks." + ID + ".MemberAccounts");
+		memberaccounts.remove(getBankAccount(name));
 		config.set("Banks." + ID + ".MemberAccounts", memberaccounts);
+		
 		plugin.saveConfig();
 		player.sendMessage(ChatColor.YELLOW + "You have successfully left your bank");
 
 	}
+	
+	@SuppressWarnings("static-access")
+	public Holdings getAccount(String account) {
+		
+		Holdings balance = plugin.iConomy.getAccount(account).getHoldings();
+		return balance;
+	}
+	
+	private String getBankAccount(String account) {
+		String accountname = config.getString("Players." + account
+				+ ".Account");
+		return accountname;
+	}
+	
 
 	// returns a list of all banks
 	private void listBanks(Player player) {
