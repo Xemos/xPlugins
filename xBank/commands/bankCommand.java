@@ -254,7 +254,7 @@ public class bankCommand implements CommandExecutor {
 			payBank(player, fee);
 			balance.subtract(amount);
 			player.sendMessage(ChatColor.YELLOW + "Deposited " + iConomy.format(amount)
-					+ " into your bank account");
+					+ " into your bank account, " + iConomy.format(fee) + " in fees have been paid.");
 		} else {
 			player.sendMessage(ChatColor.YELLOW
 					+ "You do not have sufficient funds");
@@ -480,7 +480,7 @@ public class bankCommand implements CommandExecutor {
 
 	}
 
-	// TODO returns a list of all members of a specific bank
+	//returns a list of all members of a specific bank
 
 	private void listMembers(Player player, String ID) {
 		List<String> mems = config.getStringList("Banks." + ID + ".Members");
@@ -516,7 +516,7 @@ public class bankCommand implements CommandExecutor {
 
 	}
 
-	// TODO
+
 	// /bank help screen...basically copied from the old plugin
 	private void sendHelp(Player player) {
 		player.sendMessage(this.m2c + "--------------------[ " + this.m1c
@@ -552,7 +552,7 @@ public class bankCommand implements CommandExecutor {
 			balance.add(amount);
 
 			player.sendMessage(ChatColor.YELLOW + "Withdrawn " + iConomy.format(amount)
-					+ " from your bank account");
+					+ " from your bank account, " + iConomy.format(0) + " in fees have been paid." );
 		} else {
 			player.sendMessage(ChatColor.YELLOW
 					+ "You do not have sufficient funds");
