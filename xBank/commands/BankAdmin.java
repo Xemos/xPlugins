@@ -79,10 +79,20 @@ player.sendMessage("Bad NEO!!  You no do this yet!");
 					
 					player.sendMessage("Bad NEO!!  You no do this yet!");
 					return true;
-				case "limit":
+				case "under":{
 					
-					player.sendMessage("Bad NEO!!  You no do this yet!");
+					player.sendMessage("The number of accounts under " + 
+							iConomy.format(Double.valueOf(args[1])) + 
+							" is:" + doCheck(false, args[1]));
 					return true;
+				}
+				case "over":{
+					
+					player.sendMessage("The number of accounts over " + 
+							iConomy.format(Double.valueOf(args[1])) + 
+							" is:" + doCheck(true, args[1]));
+					return true;
+				}
 				case "total":
 					if( args.length == 2){
 						if(bankExists(args[1].toUpperCase())){
@@ -105,6 +115,38 @@ player.sendMessage("Bad NEO!!  You no do this yet!");
 		return true;
 	}
 	
+	// check true = over // false = under
+	private int doCheck(boolean check, String number) { 
+		List<String> players = config.getStringList("Players");
+		
+		double amount = Double.valueOf(number);
+		int count = 0;
+		Holdings bankAcc = null;
+		
+		if(check){
+			for(String Checker: players){
+				bankAcc = getAccount(config.getString("Players." + Checker + ".Account"));
+				if(bankAcc.hasOver(amount)){
+					count ++;
+				}
+			}
+		}else{
+			for(String Checker: players){
+				bankAcc = getAccount(config.getString("Players." + Checker + ".Account"));
+				bankAcc = getAccount(Checker);
+				if(bankAcc.hasUnder(amount)){
+					count ++;
+				}
+				
+			}	
+		}
+		return count;
+		
+				
+	}
+
+
+
 	private void doTotal(Player player) {
 		
 		player.sendMessage("The total in all banks is " + iConomy.format(Double.valueOf(config.getString("Banks.Total"))));
