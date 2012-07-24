@@ -2,6 +2,8 @@ package xBank.commands;
 
 
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +13,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 import ru.tehkode.permissions.PermissionManager;
@@ -27,27 +30,19 @@ public class BankAdmin implements CommandExecutor {
 	ChatColor m2c = ChatColor.GOLD;
 	ChatColor m3c = ChatColor.WHITE;
 	private FileConfiguration config = null;
+	private FileConfiguration data = null;
 	private Core plugin;
 
 	public BankAdmin(Core core) {
 		this.plugin = core;
 	}
-
-	/*
-	  	•/bankcp level [new level]
-		•/bankcp update //forces update of stat trackers
-		•/bankcp delete [bank] //removes bank and refunds players
-		•/bankcp rank [new rank]
-		•/bankcp limit [new limit]
-		•/bankcp total [bank name] //total CN in bank, if blank, total in all banks
-		•Confirmation prompt if new rank or level is less than old
-	 */
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label,
 			String[] args) {
 
 		this.config = plugin.getConfig();
-
+		this.data = YamlConfiguration.loadConfiguration(new File(plugin.getDataFolder(), "data.yml"));
+		
 		if (Bukkit.getServer().getPluginManager()
 				.isPluginEnabled("PermissionsEx")) {
 			PermissionManager pex = PermissionsEx.getPermissionManager();
@@ -58,15 +53,13 @@ public class BankAdmin implements CommandExecutor {
 				
 				if(args.length == 0){
 					player.sendMessage("Bad NEO!!  Y U no HAZ COMMANDS!!!");
-					player.sendMessage("| Update | Delete | Rank | Level | Total | Limit |");
+					player.sendMessage("| Update | Delete | Under | Level | Total | Over |");
 					return true;
 				}
 				switch (args[0]) {
 
 				case "level":
-					
-
-player.sendMessage("Bad NEO!!  You no do this yet!");
+						player.sendMessage("Bad NEO!!  You no do this yet!");
 					return true;
 				case "update":{ 
 					doUpdate(player);
@@ -76,11 +69,9 @@ player.sendMessage("Bad NEO!!  You no do this yet!");
 					return true;
 				}
 				case "rank":
-					
 					player.sendMessage("Bad NEO!!  You no do this yet!");
 					return true;
 				case "under":{
-					
 					player.sendMessage("The number of accounts under " + 
 							iConomy.format(Double.valueOf(args[1])) + 
 							" is:" + doCheck(false, args[1]));
@@ -94,6 +85,10 @@ player.sendMessage("Bad NEO!!  You no do this yet!");
 					return true;
 				}
 				case "total":
+					if(args[1].toLowerCase() == "save"){
+						doSave(player);
+						return true;
+					}
 					if( args.length == 2){
 						if(bankExists(args[1].toUpperCase())){
 							doTotal(player, args[1].toUpperCase());
@@ -115,6 +110,27 @@ player.sendMessage("Bad NEO!!  You no do this yet!");
 		return true;
 	}
 	
+	private void doSave(Player player) {
+
+		//TODO Save addition
+		List<String> banks = config.getStringList("Banks.List");
+		int temp =0;
+		long epoch = System.currentTimeMillis()/1000;
+		String date = new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new java.util.Date (epoch*1000));
+		
+		for(String ID: banks){
+			temp = config.getInt("Banks." + ID + ".Total");	
+			data.set("Banks." + ID + "." + date,temp); 
+			try {
+				this.data.save(new File(plugin.getDataFolder(), "data.yml"));
+			} catch (IOException e) {
+				player.sendMessage("Xemos wrote poo code, MSG him if you got this.");
+				e.printStackTrace();
+			}
+		}
+		
+	}
+
 	// check true = over // false = under
 	private int doCheck(boolean check, String number) { 
 		List<String> players = config.getStringList("Players");
