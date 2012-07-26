@@ -39,7 +39,7 @@ public class Core extends JavaPlugin{
 		this.getCommand("hbank").setExecutor(new oldHelp(this));
 		this.getCommand("bank").setExecutor(new bankCommand(this));
 
-						log.info("[Bank] enabled!");
+		log.info("[Bank] enabled!");
 	}
 	
 	@Override

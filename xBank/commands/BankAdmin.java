@@ -85,20 +85,22 @@ public class BankAdmin implements CommandExecutor {
 					return true;
 				}
 				case "total":
-					if(args[1].toLowerCase() == "save"){
-						doSave(player);
-						return true;
-					}
 					if( args.length == 2){
+						if(args[1].toLowerCase() == "save"){
+							doSave(player);
+							return true;
+						}
 						if(bankExists(args[1].toUpperCase())){
 							doTotal(player, args[1].toUpperCase());
+							return true;
 						}else{
 							player.sendMessage("Neo, " + args[1] + " Does not exist!");
+							return true;
 						}
 					}else{
 						doTotal(player);
+						return true;
 					}
-					return true;
 				default:
 					return true;
 
@@ -133,27 +135,32 @@ public class BankAdmin implements CommandExecutor {
 
 	// check true = over // false = under
 	private int doCheck(boolean check, String number) { 
-		List<String> players = config.getStringList("Players");
+		List<String> banks = config.getStringList("Banks.List");
+		List<String> accounts = new ArrayList<String>();
 		
 		double amount = Double.valueOf(number);
 		int count = 0;
 		Holdings bankAcc = null;
 		
 		if(check){
-			for(String Checker: players){
-				bankAcc = getAccount(config.getString("Players." + Checker + ".Account"));
-				if(bankAcc.hasOver(amount)){
-					count ++;
+			for(String current : banks){
+				accounts = config.getStringList("Banks." + current + "MemberAccounts");
+				for(String player : accounts){
+					bankAcc = getAccount(player);
+					if(bankAcc.hasOver(amount)){
+						count ++;
+					}
 				}
 			}
 		}else{
-			for(String Checker: players){
-				bankAcc = getAccount(config.getString("Players." + Checker + ".Account"));
-				bankAcc = getAccount(Checker);
-				if(bankAcc.hasUnder(amount)){
-					count ++;
+			for (String current : banks) {
+				accounts = config.getStringList("Banks." + current + "MemberAccounts");
+				for (String player : accounts) {
+					bankAcc = getAccount(player);
+					if (bankAcc.hasUnder(amount)) {
+						count++;
+					}
 				}
-				
 			}	
 		}
 		return count;
