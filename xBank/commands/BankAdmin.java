@@ -62,7 +62,9 @@ public class BankAdmin implements CommandExecutor {
 						player.sendMessage("Bad NEO!!  You no do this yet!");
 					return true;
 				case "update":{ 
-					doUpdate(player);
+				
+						doUpdate(player);
+					
 					return true;}
 				case "delete":{ 
 					doDelete(args[1]);
@@ -86,10 +88,12 @@ public class BankAdmin implements CommandExecutor {
 				}
 				case "total":
 					if( args.length == 2){
-						if(args[1].toLowerCase() == "save"){
+						if(args[1].toLowerCase().matches("save")){
+							player.sendMessage("did it" + args[1]);
 							doSave(player);
 							return true;
 						}
+						player.sendMessage("didn't do it  ->" + args[1] + "<-");
 						if(bankExists(args[1].toUpperCase())){
 							doTotal(player, args[1].toUpperCase());
 							return true;
@@ -138,30 +142,30 @@ public class BankAdmin implements CommandExecutor {
 		List<String> banks = config.getStringList("Banks.List");
 		List<String> accounts = new ArrayList<String>();
 		
+		for (String current : banks) {
+			accounts.addAll(config.getStringList("Banks." + current + ".MemberAccounts"));
+		}
+				
 		double amount = Double.valueOf(number);
 		int count = 0;
 		Holdings bankAcc = null;
 		
 		if(check){
-			for(String current : banks){
-				accounts = config.getStringList("Banks." + current + "MemberAccounts");
-				for(String player : accounts){
+			for(String player : accounts){
 					bankAcc = getAccount(player);
 					if(bankAcc.hasOver(amount)){
 						count ++;
 					}
-				}
+				
 			}
 		}else{
-			for (String current : banks) {
-				accounts = config.getStringList("Banks." + current + "MemberAccounts");
-				for (String player : accounts) {
+			for (String player : accounts) {
 					bankAcc = getAccount(player);
 					if (bankAcc.hasUnder(amount)) {
 						count++;
 					}
 				}
-			}	
+			
 		}
 		return count;
 		
@@ -244,7 +248,7 @@ public class BankAdmin implements CommandExecutor {
 			
 			if(!config.contains("Banks." + ID + ".Membercap")){
 				config.set("Banks." + ID + ".Membercap",8);
-				plugin.saveConfig();
+				
 			}
 			
 			region.add(x,config.getString("Banks." + ID + ".Region"));
@@ -252,7 +256,7 @@ public class BankAdmin implements CommandExecutor {
 			config.set("Location." + region.get(x), ID);
 			
 			config.set("Banks." + ID + ".Total", sum);
-			plugin.saveConfig();
+		
 			total += sum;
 			sum = 0;
 			accHolders = null;
